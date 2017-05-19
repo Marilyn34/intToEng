@@ -7,16 +7,26 @@ public class IntToEng {
 
         Scanner sc = new Scanner(System.in);
         int input = sc.nextInt();
+        if(input == 0){
+        	System.out.println("zero");        	
+        }else{
         System.out.println(translateEng(input));
+        }
 
     }
 
     // 数値を英訳する変換するメソッド
     static String translateEng(int n) {
     	StringBuffer sb = new StringBuffer();
-    	sb.append(number(n%10));
+    	if(n/100 != 0){
+    	sb.append(number(n/100));//100の位
+    	sb.append(" hundred ");
+    	}
+    	if(n / 10 != 0){
+    	sb.append(number10(n/10));//10の位
     	sb.append(" ");
-    	sb.append(number10(n/10));
+    	}
+    	sb.append(number(n%10));//1の位
         return new String(sb);
     }
     
