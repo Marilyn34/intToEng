@@ -22,7 +22,7 @@ public class IntToEng {
     	sb.append(number(n/100));//100の位
     	sb.append(" hundred ");
     	}
-    	if(n / 10 != 0){
+    	if(n/10 != 0){
     	sb.append(number10(n/10));//10の位
     	sb.append(" ");
     	}
@@ -54,23 +54,23 @@ public class IntToEng {
     }
     
     static String number10(int n) {
-    	if(n == 1) {
+    	if(n%10 == 1) {
     		return "ten";
-    	}if(n == 2) {
+    	}if(n%10 == 2) {
     		return "twenty";
-    	}if(n == 3) {
+    	}if(n%10 == 3) {
     		return "thirty";
-    	}if(n == 4) {
+    	}if(n%10 == 4) {
     		return "fourty";
-    	}if(n == 5) {
+    	}if(n%10 == 5) {
     		return "fifty";
-    	}if(n == 6) {
+    	}if(n%10 == 6) {
     		return "sixty";
-    	}if(n == 7) {
+    	}if(n%10 == 7) {
     		return "seventy";
-    	}if(n == 8) {
+    	}if(n%10 == 8) {
     		return "eighty";
-    	}if(n == 9) {
+    	}if(n%10 == 9) {
     		return "ninety";
     	}
     	return "";
