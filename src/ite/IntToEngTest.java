@@ -33,8 +33,11 @@ public class IntToEngTest {
 		String expected2 = "nine";
 		String actual2 = ite.translateEng(9);
 		assertThat(actual2,is(expected2));
-		String expected3 = "one hunderd twenty two";
+		String expected3 = "one hundred twenty two";
 		String actual3 = ite.translateEng(122);
 		assertThat(actual3,is(expected3));
+		String expected4 = "three hundreds sixty";
+		String actual4 = ite.translateEng(360);
+		assertThat(actual4,is(expected4));
 	}
 }

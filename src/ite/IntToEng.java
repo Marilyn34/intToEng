@@ -20,11 +20,13 @@ public class IntToEng {
     	StringBuffer sb = new StringBuffer();
     	if(n/100 != 0){
     	sb.append(number(n/100));//100の位
-    	sb.append(" hundred ");
+    	sb.append(number100(n/100));
     	}
     	if(n/10 != 0){
     	sb.append(number10(n/10));//10の位
+    	if(n%10 != 0){
     	sb.append(" ");
+    	}
     	}
     	sb.append(number(n%10));//1の位
         return new String(sb);
@@ -74,5 +76,12 @@ public class IntToEng {
     		return "ninety";
     	}
     	return "";
+    }
+    static String number100(int n) {
+    	if(n ==1){
+    		return " hundred ";
+    	}else{
+    		return " hundreds ";
+    	}
     }
 }
