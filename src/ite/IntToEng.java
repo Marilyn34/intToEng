@@ -19,16 +19,20 @@ public class IntToEng {
     static String translateEng(int n) {
     	StringBuffer sb = new StringBuffer();
     	if(n/100 != 0){
-    	sb.append(number(n/100));//100の位
+    	sb.append(number(n/100));
     	sb.append(number100(n/100));
+    	sb.append(" ");//100の位
     	}
     	if(n/10 != 0){
-    	sb.append(number10(n/10));//10の位
-    	if(n%10 != 0){
-    	sb.append(" ");
+    		sb.append(number10(n/10));
+    		sb.append(" ");//10の位
     	}
+    	
+    	if(n%10 == 0) {
+    		sb.deleteCharAt(sb.length()-1);
+    	} else {
+    		sb.append(number(n%10));//1の位
     	}
-    	sb.append(number(n%10));//1の位
         return new String(sb);
     }
     
@@ -79,9 +83,9 @@ public class IntToEng {
     }
     static String number100(int n) {
     	if(n ==1){
-    		return " hundred ";
+    		return " hundred";
     	}else{
-    		return " hundreds ";
+    		return " hundreds";
     	}
     }
 }

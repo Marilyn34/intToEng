@@ -30,14 +30,21 @@ public class IntToEngTest {
 		String expected1 = "twenty one";
 		String actual1 = ite.translateEng(21);
 		assertThat(actual1,is(expected1));
+		
 		String expected2 = "nine";
 		String actual2 = ite.translateEng(9);
 		assertThat(actual2,is(expected2));
+		
 		String expected3 = "one hundred twenty two";
 		String actual3 = ite.translateEng(122);
 		assertThat(actual3,is(expected3));
+		
 		String expected4 = "three hundreds sixty";
 		String actual4 = ite.translateEng(360);
 		assertThat(actual4,is(expected4));
+		
+		String expected5 = "one hundred";
+		String actual5 = ite.translateEng(100);
+		assertThat(actual5,is(expected5));
 	}
 }
